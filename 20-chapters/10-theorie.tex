@@ -1,0 +1,156 @@
+% !TEX root =  master.tex
+\chapter{Theoretische Grundlagen}
+
+\section{Natural Language Processing}
+
+% AUCH MÖGLICH: Natural Language Processing (NLP) ist ein interdisziplinärer Forschungs- und Anwendungsbereich, der sich mit der automatisierten Verarbeitung natürlicher Sprache durch Computersysteme beschäftigt. Ziel ist es, natürliche, meist unstrukturierte Texte in formale, maschinenverarbeitbare Repräsentationen zu überführen oder aus solchen Strukturen wieder kohärente, menschlich verständliche Sprache zu generieren.
+
+%Historisch wurzelt NLP in der Computerlinguistik und symbolischen \ac{ki}, entwickelte sich jedoch insbesondere durch Fortschritte im Bereich des Machine Learning (ML) zu einem datengetriebenen Forschungs- und Anwendungsfeld weiter.
+%In den vergangenen Jahren hat NLP – sowohl im akademischen Diskurs als auch im gesellschaftlichen Diskursfeld – signifikant an Bedeutung gewonnen. Dies äußert sich unter anderem in der stark gestiegenen Anzahl wissenschaftlicher Publikationen, der Relevanz in industriellen Anwendungen sowie dem breiten Einsatz generativer Sprachmodelle durch Millionen von Nutzer:innen weltweit.
+%NLP versucht die Lücke zwischen menschlicher Kommunikation und der Sprachverarbeitung durch Maschinen zu schließen.
+%Formal lässt sich die Kernaufgabe des NLP als ein Funktionalmapping zwischen zwei Mengen beschreiben:
+
+%%%%%% Wahrerer TEXT %%%%%%%
+
+\textbf{\ac{nlp}} bezeichnet ein interdisziplinäres Forschungsfeld an der Schnittstelle von Informatik, Linguistik und Künstlicher Intelligenz. Ziel ist es, natürliche Sprache – insbesondere in ihrer schriftlichen oder gesprochenen Form – für Computersysteme analysierbar, interpretierbar und generierbar zu machen. Zentral ist dabei die Überführung von unstrukturierten sprachlichen Daten in strukturierte, maschinenverarbeitbare Repräsentationen sowie umgekehrt die Generierung kohärenter Sprache aus internen Modellen oder formalen Wissensstrukturen.
+
+\begin{quote}
+    \textit{„NLP beschreibt computergestützte Techniken zur maschinellen Erkennung und Verarbeitung von natürlicher Sprache.“}\
+    – Fraunhofer-Institut
+\end{quote}
+
+Ursprünglich in der formalen Linguistik und symbolischen \ac{ki} verankert, hat sich NLP mit der Verfügbarkeit großer Datenmengen und durch Fortschritte im maschinellen Lernen zu einem datengetriebenen Paradigma gewandelt. Aktuelle Entwicklungen wie große Sprachmodelle (LLMs) markieren hierbei eine paradigmatische Verschiebung hin zu generativen und kontextsensitiven Architekturen.
+Die Relevanz von \ac{nlp} hat in den letzten Jahren erheblich zugenommen – sowohl hinsichtlich der Zahl wissenschaftlicher Publikationen als auch durch seine Sichtbarkeit in industriellen Anwendungen. Sprachmodelle wie GPT oder BERT werden täglich von Millionen Menschen genutzt und stellen ein zentrales Anwendungsfeld moderner \ac{ki} dar.
+
+\subsubsection{Formale Charakterisierung}
+Die grundlegende Aufgabe des NLP lässt sich formal als Abbildung
+
+    \vspace{-1em}
+    \[f_{NLU} : \mathcal{X} \rightarrow \mathcal{Y} \]
+    \vspace{-1em}
+
+beschreiben, wobei:
+
+\begin{adjustwidth}{1cm}{0cm}
+    \( \mathcal{X} \) den Raum sprachlicher Eingaben repräsentiert (Texte, Dokumente, verbale Sprache), typischerweise als Zeichenketten über einem Alphabet  \( \Sigma\), also  \( \mathcal{X} \subseteq \Sigma ^* \) 
+    
+    \( \mathcal{Y} \) den Raum der Zielrepräsentationen beschreibt, etwa semantische Kategorien, logische Formen, strukturierte Datenbankabfragen oder handlungsrelevante Parameter.
+\end{adjustwidth}
+
+Dieses Mapping entspricht typischerweise der Interpretation sprachlicher Eingaben – einem zentralen Teilbereich des \ac{nlp}, bekannt als \textbf{\ac{nlu}}.
+
+Komplementär dazu steht die inverse Aufgabe, bei der aus formalen, strukturierten Repräsentationen sprachlich kohärente Ausgaben generiert werden. Diese sogenannte \textbf{\ac{nlg}} lässt sich analog als Abbildung:
+
+    \vspace{-1em}
+    \[f_{NLG} :  \mathcal{Y} \rightarrow \mathcal{X} \]
+    \vspace{-1em}
+
+formalisieren. Beide Richtungen – Interpretation und Generierung – bilden zusammen die funktionale Klammer moderner \ac{nlp}-Systeme.
+
+\subsubsection{Textklassifikation als Spezialfall der \ac{nlu}}
+
+Ein prominentes Anwendungsfeld der NLU ist die Textklassifikation, bei der jedem Dokument \(d \in D \subset \mathcal{X} \)  ein Label \(c \in \mathcal{C} \) aus einem endlichen Klassenvokabular \( \mathcal{C} = \{c_1, \dots, c_k\} \)  zugewiesen wird. Ziel ist die Approximation einer Entscheidungsfunktion: \( f_{\text{class}}: \mathcal{D} \rightarrow \mathcal{C}\)
+
+
+\textbf{Anmerkung zur Entwicklung und Methodologie}
+
+Die computergestützte Verarbeitung natürlicher Sprache war in ihren Anfängen über-wiegend symbolisch geprägt: Frühe Systeme basierten auf handkodierten Regeln, regulären Ausdrücken, Grammatiken oder endlichen Automaten. Diese deterministischen Ansätze zeichnen sich durch hohe Interpretierbarkeit und Effizienz aus, sind jedoch hinsichtlich sprachlicher Ambiguität und Generalisierungsfähigkeit stark limitiert. Mit dem Aufkommen leistungsfähiger Recheninfrastrukturen und großer annotierter Korpora verlagerte sich der methodische Fokus zunehmend auf datengetriebene Verfahren. Heute dominieren maschinell lernende Modelle – insbesondere tiefenlernende Architekturen – die Forschung und Anwendung im NLP. Diese ermöglichen es, semantische Repräsentationen direkt aus unstrukturiertem Text zu induzieren und adaptiv auf unterschiedliche Kontexte zu generalisieren. Gleichwohl werden symbolische Verfahren nicht obsolet: In domänenspezifischen Szenarien – etwa der juristischen Dokumentenanalyse oder bei formalisierten Protokolltexten – finden regelbasierte Methoden weiterhin Anwendung, etwa in hybriden NLP-Architekturen, die statistische und symbolische Elemente kombinieren.
+
+%%%%%% nächster Abschnitt %%%%%%
+
+\section{Linguistische Analyseebenen}
+
+Die Verarbeitung natürlicher Sprache setzt ein Verständnis der sprachlichen Struktur auf mehreren hierarchisch organisierten Analyseebenen voraus. Diese Ebenen sind in der linguistischen Theorie wohl etabliert und bilden zugleich die konzeptuelle Grundlage vieler \ac{nlu}-Systeme. Jede Ebene beschreibt eine spezifische Abstraktionsstufe, auf der sprachliche Information systematisch erfasst und verarbeitet wird.
+
+\begin{itemize}
+    \item \textbf{Morphologische Ebene:}
+     Auf dieser untersten sprachlichen Analyseebene wird ein Wort in seine kleinsten bedeutungstragenden Einheiten, sogenannte Morpheme, zerlegt. Dies umfasst Prozesse wie Stamm- und Affixanalyse sowie Flexions- und Wortbildungsmechanismen. In der automatisierten Verarbeitung werden dabei typischerweise Tokenisierung, Lemmatisierung und Stemming durchgeführt.
+    \item \textbf{Syntaktische Ebene:}
+     Hier erfolgt die Analyse der grammatikalischen Struktur eines Satzes. Ziel ist es, formale Beziehungen zwischen Wörtern zu identifizieren – etwa durch Konstituentenstrukturen (Phrase Structure Grammar) oder Dependenzrelationen (Dependency Parsing). Die syntaktische Analyse liefert strukturelle Bäume oder Graphen, die die hierarchische Anordnung der sprachlichen Elemente abbilden.
+    \item \textbf{Semantische Ebene:}
+     Die semantische Analyse zielt auf die Interpretation der Bedeutung sprachlicher Einheiten ab. Dies umfasst unter anderem Wortsemantik (z.B. Polysemie, Synonymie), Prädikaten-Argument-Strukturen sowie Repräsen-tationen mittels logischer Formeln oder Vektorraummodelle. Ziel ist die systematische Abbildung von Bedeutung, unabhängig von konkreter Formulierung.
+    \item \textbf{Pragmatische Ebene:}
+     Diese Ebene berücksichtigt die Bedeutung sprachlicher Äußerungen im jeweiligen Kontext. Pragmatische Analyse erfordert Informationen über Diskurs, Sprecherintention, Weltwissen und inferenzielle Mechanismen. Klassische Phänomene sind Deixis, Implikaturen oder Präsuppositionen.
+\end{itemize}
+
+\section{Die NLP-Verarbeitungskette}
+
+
+\subsection{Vorverarbeitung}
+
+Die Vorverarbeitung natürlicher Sprache bildet den ersten und zugleich fundamentalen Schritt in einer NLP-Prozesskette. Ziel der Vorverarbeitung ist es, die Textrepräsentation zu stabilisieren und systematisch zu reduzieren, nicht sie zu strukturieren. Die Auswahl und und konkrete Ausgestaltung der Vorverarbeitungsschritte hängt maßgeblich von der Zielaufgabe (z.B. Klassifikation, Clustering, Informationsextraktion) sowie von den Eigenschaften des Textkorpus ab [Camacho-Collados und Pilehvar, 2017].
+
+\subsubsection{Tokenisierung}
+
+Die Tokenisierung zerlegt einen Fließtext in bedeutungstragende Einheiten, sogenannte Tokens – meist Wörter, Phrasen oder Satzzeichen. Klassisch erfolgt dies mithilfe einfacher Regeln wie Whitespace- oder Interpunktionssegmentierung
+wandb.ai
++3
+nlp.stanford.edu
++3
+sciencedirect.com
++3
+. Bei komplexen Sprachen wie Chinesisch hingegen ist eine lexikonbasierte Segmentierung notwendig.
+
+Tokenisierung gilt als kritisch, da sie die Grundlage für die fehlerfreie Textrepräsentation bildet. Fehlende Wortgrenzen oder falsch segmentierte Einheiten können im akkumulierten Modell große Auswirkungen haben.
+
+\subsubsection{Word Normalization, Lemmatization and Stemming}
+
+Ein zentraler Schritt in der sprachlichen Vorverarbeitung natürlicher Sprache ist die Reduktion der lexikalischen und morphologischen Variabilität von Wörtern. Ziel ist es, die Anzahl der unterschiedlichen Oberflächenformen zu verringern und semantisch oder funktional äquivalente Ausdrücke in eine einheitliche Repräsentation zu überführen. Dies unterstützt nicht nur die Generalisierbarkeit maschineller Modelle, sondern reduziert auch die Dimension von Merkmalsvektoren, was insbesondere bei der Vektorraumbasierten Repräsentation von Dokumenten relevant ist.
+
+%Ein zentrales Ziel in der sprachlichen Vorverarbeitung natürlicher Sprache ist die Reduktion oberflächenstruktureller und morphologischer Variabilität. Durch die Rückführung flexionell oder orthografisch divergierender Wortformen auf eine einheitliche Repräsentation kann sowohl die semantische Kohärenz verbessert als auch die Vokabulargröße reduziert werden – ein entscheidender Faktor zur Effizienzsteigerung in NLP-Systemen.
+
+%%%%%%  Morphologische Grundlagen %%%%%%
+%Die linguistische Morphologie beschreibt den inneren Aufbau von Wörtern aus bedeutungstragenden Einheiten, den sogenannten Morphemen. Hierbei unterscheidet man insbesondere zwischen Stammmorphemen, die die lexikalische Grundbedeutung eines Wortes tragen (z. B. „geh-“ in „gehen“), und Flexionsmorphemen, welche grammatische Merkmale wie Tempus, Numerus oder Kasus ausdrücken („-en“, „-st“ etc.). Eine konkrete Wortform stellt eine flektierte Ausprägung eines abstrakten Lexems dar – einer lexikalischen Einheit, die eine Menge von Wortformen mit gemeinsamer Bedeutung und Wortart umfasst. Das zugehörige Lemma bezeichnet dabei die kanonische Grundform, wie sie etwa im Wörterbuch aufgeführt ist.
+
+\textbf{Normalisierung}
+
+Die Normalisierung zielt auf die Standardisierung lexikalischer Einheiten ab, ohne dabei tiefgreifende linguistische Analysen durchzuführen. Sie adressiert primär orthografische und typografische Variation, um statistische Rauscheffekte zu minimieren. Typische Verfahren umfassen:
+
+\begin{itemize}
+    \item Case Folding (z.B. „Haus“ → „haus“),
+    \item Satzzeichen- und Sonderzeichenersetzung (z.B. „Müller“ → „Mueller“),
+    \item Formatangleichung numerischer oder temporaler Ausdrücke (z.B. „1.000“ → „1000“).
+\end{itemize}
+
+Diese Schritte verbessern insbesondere die Generalisierbarkeit in frequenzbasierten Modellen wie Bag-of-Words oder TF-IDF, ohne jedoch semantische oder syntaktische Strukturen zu berücksichtigen.
+
+\textbf{Lemmatisierung}
+
+Die Lemmatisierung stellt ein präziseres Verfahren der Normalisierung dar, das morphologische Analyse einbezieht. Ziel ist es, eine gegebene flektierte Wortform kontextabhängig auf ihr entsprechendes Lemma abzubilden. Hierzu werden Wortart, grammatische Merkmale (wie Wortart, Tempus und Kasus) sowie sprachspezifische Paradigmen herangezogen. In morphologisch komplexen Sprachen wie dem Polnischen ist diese Analyse besonders relevant, da dort ein einziges Lexem in zahlreichen Flexionsformen auftreten kann (z.B. „Warszawa“, „Warszawie“, „Warszawy“ für „Warschau“).
+
+% Die Lemmatisierung ist ein sprachsensitives Verfahren zur Reduktion flektierter Wortformen auf ihr jeweiliges Lemma. Sie berücksichtigt morphosyntaktische Merkmale wie Wortart, Tempus und Kasus, oft unter Rückgriff auf Lexika und morphologische Analysetools. Anders als beim Stemming erfolgt die Reduktion kontextabhängig und semantisch präzise (z.B. „ging“, „gehst“, „gegangen“ → „gehen“). Die Lemmatisierung ist insbesondere in stark flektierenden Sprachen (z.B. Polnisch oder Deutsch) unverzichtbar zur Vereinheitlichung bedeutungsgleicher Ausdrücke.
+
+\textbf{Stemming}
+
+% Im Gegensatz zur Lemmatisierung verfolgt das Stemming einen heuristischeren Ansatz. Hierbei werden typische Suffixe oder Endungen regelbasiert entfernt, um eine gemeinsame Stammform zu erzeugen – unabhängig von grammatischem Kontext oder semantischer Korrektheit. Stemming ist damit eine vereinfachte, nicht kontextuelle Methode der morphologischen Reduktion, die besonders bei großen Textmengen oder in Echtzeitanwendungen zum Einsatz kommt, etwa bei der Indexierung in Suchmaschinen.
+
+% Stemming-Verfahren neigen zu Fehlklassifikationen (Overstemming oder Understemming). So kann etwa „policy“ fälschlich zu „polic“ gestemmt werden, was mit „police“ kollidieren könnte. Dennoch bietet Stemming in bestimmten Szenarien eine akzeptable Annäherung, vor allem wenn eine schnelle Reduktion der Vokabulargröße gewünscht ist.
+
+Das Stemming stellt eine heuristische Approximation der morphologischen Reduktion dar. Durch regelbasiertes Entfernen derivativer oder flexiver Affixe wird eine gemeinsame Stammform erzeugt (z.B. „gegangen“, „gehst“ → „geh“). Diese ist jedoch nicht notwendigerweise lexikalisch oder semantisch korrekt. Stemming-Algorithmen wie der Porter Stemmer oder Snowball Stemmer arbeiten sprachunabhängig und effizient, neigen jedoch zu Overstemming („policy“ → „polic“) oder Understemming („European“ != „Europe“).
+Trotz eingeschränkter linguistischer Genauigkeit kann Stemming bei großvolumigen Textkorpora oder in frühen Analysephasen zur Vokabularreduktion beitragen, insbesondere im Rahmen unsupervisierter Term-Clustering-Verfahren.
+
+\subsubsection{Stoppwörter entfernen}
+
+Stopword-Removal (Entfernung von Funktionswörtern) verfolgt denselben Zweck: Redundante Token wie Artikel, Konjunktionen oder Präpositionen, die wenig semantische Unterscheidungskraft besitzen, werden gelöscht. Dies stabilisiert die Darstellung bei gleichzeitigem Reduzieren der Dimensionalität des Merkmalsraums.
+
+\subsubsection{Bedeutung der Vorverarbeitung für nachgelagerte Aufgaben}
+
+
+\section{Vektorisierungsmethode}
+
+Um Texte effektiv für die automatisierte Verarbeitung und Klassifizierung durch Computer zugänglich zu machen, ist es notwendig, sie zunächst in ein computerlesbares Format zu überführen. Dieser Prozess der Vorverarbeitung zielt darauf ab, die inhaltlichen Aspekte und die Intention des Autors so zu abstrahieren, dass sie durch spezifizierte Features repräsentiert werden können, die computergestützt analysierbar sind.
+
+\subsection{Bag of Words}
+Ein grundlegender Ansatz hierbei ist das Modell des "Bag of Words". Dieses Konzept vereinfacht die Darstellung eines Textes, indem es ihn in Form eines Vektors von Termgewichten strukturiert, den man formal als $ \mathbf{d_j} = (w_{1}^j, w_{2}^j, \ldots, w_{|\mathcal{T}|}^j)$ darstellt. Hierbei repräsentiert $\mathcal{T}$ die Menge der möglichen Wörter, welche entweder die gesamte Bandbreite der relevanten Wörter innerhalb der Ursprungs-Domäne $\mathcal{D}$ der Texte umfassen oder sich auf ein festgelegtes Lexikon beziehen kann.
+
+
+
+Dieser methodische Ansatz erlaubt eine vereinfachte Zugänglichkeit und Handhabbarkeit textueller Daten durch technische Systeme, indem er die komplexen semantischen Strukturen in quantifizierbare und somit analysierbare Einheiten transformiert.
+
+
+\section{Moderne Ansätze: End-to-End Methoden}
+
+
+
+\section{Klassifizierungsmethoden}
+% >>> Nun können wir den Inhalt von Texten verstehen und unserem eigentlichen Zielen nachgehen - der Klassifikation von Texten

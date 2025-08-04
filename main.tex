@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   AUTOR:
+%   Felix Niklas Regler
+%   VERSION: 
+%   1.0
+%   DATE:
+%   04.08.2025
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[fontsize=12pt,BCOR=5mm,DIV=12,parskip=half,listof=totoc, paper=a4,toc=bibliography,numbers=noenddot]{scrreprt}
+               
+% Einbinden der Konfigurationen
+\input{00-meta_config/config}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   PERSÖNLICHE ANGABEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ArtDerArbeit{Projekt}
+\TitelDerArbeit{<Der super Titel ihrer Arbeit>}
+\AutorDerArbeit{<Ihr Name>}
+\Abteilung{<name ihrer Abteilung>}
+\Firma{<Name ihrer Firma>}
+\Kurs{<Kurs Name>}
+\Studienrichtung{<Ihre Studienrichtung>}
+\Matrikelnummer{<Ihre Martikelnummer>}
+\Studiengangsleiter{<Ihr Studiengangsleiter>}
+\WissBetreuer{<Ihr(e) wissenschaftliche(r) Betreuer(in)>}
+\FirmenBetreuer{<Ihr(e) Firmenbetreuer(in)>}
+\Bearbeitungszeitraum{dd.mm.yyyy -- DD.MM.YYYY}
+\Abgabedatum{dd.mm.yyyy}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   STRUKTUR DER ARBEIT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\setTitlepage
+
+%%%%% EHRENWÖRTLICHE ERKLÄRUNG %%%%%
+\input{10-frontmatter/ewerkl} 
+\cleardoublepage 
+
+%%%%% KURZFASSUNG %%%%%
+
+%%%%% VERZEICHNISSE und ABSTRACT %%%%%
+
+\tableofcontents
+\cleardoublepage
+\input{10-frontmatter/acronyms}
+
+%%%%% KAPITEL UND ANHÄNGE %%%%%
+\initializeText
+
+% Einleitung
+\input{20-chapters/00-intro}
+
+% mehrere Grundlagen- und Forschungs-Kapitel
+\input{20-chapters/10-theorie}
+
+% Fazit und Ausblick
+\input{20-chapters/99-conclusion}
+
+
+%%%%% ANHÄNGE %%%%%
+\initializeAppendix
+
+\input{50-appendix/appendix_1}
+
+%%%%% LITERATURVERZEICHNIS %%%%%
+
+
+\end{document}

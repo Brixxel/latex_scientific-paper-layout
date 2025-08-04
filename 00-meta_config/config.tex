@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Konfigurations Datei
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+
+%%% LANGUAGE SETTINGS %%%
+%
+\usepackage[ngerman]{babel} 	         % german language
+\usepackage[german=quotes]{csquotes} 	 % correct quoting using \enquote{}
+%\usepackage[english]{babel}             % english language
+%\usepackage{csquotes} 	                 % correct quoting using \enquote{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%         Pakete - Importieren        %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{acronym}
+\usepackage{amsmath}
+\usepackage{changepage}	
+\usepackage{scrlayer-scrpage}
+\usepackage{tocloft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%         Commands - Definieren       %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\indextype}{numeric}
+\newcommand{\abs}{\par\vskip 0.2cm\goodbreak\noindent}
+\newcommand{\nl}{\par\noindent}
+\newcommand{\mcl}[1]{\mathcal{#1}}
+\newcommand{\nowrite}[1]{}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\imagedir}{img}
+
+%%% Titelinformationen %%%
+
+\newcommand{\TitelDerArbeit}[1]{\def\DerTitelDerArbeit{#1}\hypersetup{pdftitle={#1}}}
+\newcommand{\AutorDerArbeit}[1]{\def\DerAutorDerArbeit{#1}\hypersetup{pdfauthor={#1}}}
+\newcommand{\Firma}[1]{\def\DerNameDerFirma{#1}}
+\newcommand{\Kurs}[1]{\def\DieKursbezeichnung{#1}}
+\newcommand{\Abteilung}[1]{\def\DerNameDerAbteilung{#1}}
+\newcommand{\Studiengangsleiter}[1]{\def\DerStudiengangsleiter{#1}}
+\newcommand{\WissBetreuer}[1]{\def\DerWissBetreuer{#1}}
+\newcommand{\FirmenBetreuer}[1]{\def\DerFirmenBetreuer{#1}}
+\newcommand{\Bearbeitungszeitraum}[1]{\def\DerBearbeitungszeitraum{#1}}
+\newcommand{\Abgabedatum}[1]{\def\DasAbgabedatum{#1}}
+\newcommand{\Matrikelnummer}[1]{\def\DieMatrikelnummer{#1}}
+\newcommand{\Studienrichtung}[1]{\def\DieStudienrichtung{#1}}
+\newcommand{\ArtDerArbeit}[1]{\def\DieArtDerArbeit{#1}}
+\newcommand{\Literaturverzeichnis}{Literaturverzeichnis}
+
+\newcommand{\setTitlepage}{
+	\input{10-frontmatter/titlepage}
+	\pagenumbering{roman} % Römische Seitennummerierung
+	\normalfont	
+}
+
+\newcommand{\initializeText}{
+  \ihead{\chaptername~\thechapter} % Neue Header-Definition
+  \pagenumbering{arabic}           % Arabische Seitenzahlen
+}
+
+\newcommand{\initializeBibliography}{
+	\ihead{}
+	\printbibliography[title=\Literaturverzeichnis] 
+	\cleardoublepage
+}
+
+\newcommand{\initializeAppendix}{
+	\appendix
+  \ihead{}
+  \cftaddtitleline{toc}{chapter}{Anhang}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Zitierstiele            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\usepackage{natbib}          % Für den Zitierstil, kann angepasst werden
+\bibliographystyle{apalike}  % Beispiel-Stil, kann zu IEEE, Chicago, etc. geändert werden
+\usepackage{helvet}          % Schriftart Helvetica
+\renewcommand{\familydefault}{\sfdefault}  % Helvetica als Standardschrift
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%         Layout - Definieren         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Page Layout
+\oddsidemargin=0mm
+\evensidemargin=0mm
+\textwidth=159mm
+\topmargin=-18mm
+\headsep=10mm
+\textheight=251mm
+\footheight=15mm
+
+\makeindex
+
